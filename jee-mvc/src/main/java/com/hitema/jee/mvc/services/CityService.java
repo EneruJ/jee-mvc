@@ -9,6 +9,8 @@ public interface CityService {
 
     City read(Long id);
 
+    City readByCity(String city);
+
     City update(City city);
 
     void delete(Long id);

@@ -20,26 +20,38 @@ public class CityServiceImpl implements CityService{
 
     @Override
     public City create(City city) {
-        return null;
+        // Create city
+        var newCity = repository.save(city);
+        log.trace("New city created: {}", newCity);
+        return newCity;
     }
 
     @Override
     public City read(Long id) {
-        return null;
+        // Read city with id
+        return repository.findById(id).orElse(null);
+    }
+
+    public City readByCity(String city) {
+        // Read city with name
+        return repository.findByCity(city);
     }
 
     @Override
     public City update(City city) {
-        return null;
+        // Update city
+        return repository.save(city);
     }
 
     @Override
     public void delete(Long id) {
-
+        // Delete city with id
+        repository.deleteById(id);
     }
 
     @Override
     public List<City> readAll() {
-        return null;
+        // Read all cities
+        return repository.findAll();
     }
 }
