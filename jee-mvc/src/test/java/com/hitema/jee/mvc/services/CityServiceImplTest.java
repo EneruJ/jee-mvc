@@ -67,9 +67,10 @@ class CityServiceImplTest {
     @Test
     void readByCityPart(){
         // Read cities containing "bourd"
-        var cities = service.readByCity("%bourg");
-        assertNotNull(cities,"WARNING Cities containing %bourg not Found !!!");
-        cities.readAll(city -> log.trace("City containing %bourg found: {}", city));
+        var city = service.readByCity("%bourg");
+        assertNotNull(city,"WARNING Cities containing %bourg not Found !!!");
+        log.trace("Cities containing %bourg found: {}", city);
+
     }
 
     @Test
