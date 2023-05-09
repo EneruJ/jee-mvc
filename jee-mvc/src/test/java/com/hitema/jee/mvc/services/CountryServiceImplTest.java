@@ -35,7 +35,7 @@ class CountryServiceImplTest {
         country.setLastUpdate(LocalDate.now().atStartOfDay());
         var newCountry = service.create(country);
         assertNotNull(newCountry,"WARNING Country not created !!!");
-        log.info("New country created: {}", newCountry);
+        log.trace("New country created: {}", newCountry);
     }
 
     @Order(2)
@@ -44,7 +44,7 @@ class CountryServiceImplTest {
         // Read country 1
         var country = service.read(1L);
         assertNotNull(country,"WARNING Country 1 not Found !!!");
-        log.info("Country 1 found: {}", country);
+        log.trace("Country 1 found: {}", country);
     }
 
     @Order(3)
@@ -56,7 +56,7 @@ class CountryServiceImplTest {
         country.setCountry("Hahaland");
         var updatedCountry = service.update(country);
         assertNotNull(updatedCountry,"WARNING Country 1 not Updated !!!");
-        log.info("Country 1 updated: {}", updatedCountry);
+        log.trace("Country 1 updated: {}", updatedCountry);
     }
 
     @Order(4)
@@ -67,7 +67,7 @@ class CountryServiceImplTest {
         assertNotNull(country,"WARNING Country 1 not Found !!!");
         // Delete country 1 with on cascade
         service.delete("Listenbourg");
-        log.info("Country 1 deleted");
+        log.trace("Country 1 deleted");
     }
 
     @Order(5)
