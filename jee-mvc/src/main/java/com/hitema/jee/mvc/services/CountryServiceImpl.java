@@ -20,22 +20,24 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public Country create(Country country) {
-        return null;
+        var newCountry = repository.save(country);
+        log.trace("New country created: {}", newCountry);
+        return newCountry;
     }
 
     @Override
     public Country read(Long id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
     public Country update(Country country) {
-        return null;
+        return repository.save(country);
     }
 
     @Override
     public void delete(Long id) {
-
+        repository.deleteById(id);
     }
 
     @Override
