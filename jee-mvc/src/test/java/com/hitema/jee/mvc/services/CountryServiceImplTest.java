@@ -66,7 +66,7 @@ class CountryServiceImplTest {
         var country = service.read(1L);
         assertNotNull(country,"WARNING Country 1 not Found !!!");
         // Delete country 1 with on cascade
-        service.delete(1L);
+        service.delete("Listenbourg");
         log.info("Country 1 deleted");
     }
 

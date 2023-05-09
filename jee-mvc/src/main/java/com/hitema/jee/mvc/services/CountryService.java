@@ -11,7 +11,7 @@ public interface CountryService {
 
     Country update(Country country);
 
-    void delete(Long id);
+    void delete(String country);
 
     List<Country> readAll();
 }

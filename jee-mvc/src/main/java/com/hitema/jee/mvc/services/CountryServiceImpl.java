@@ -1,6 +1,7 @@
 package com.hitema.jee.mvc.services;
 import com.hitema.jee.mvc.entities.Country;
 import com.hitema.jee.mvc.repositories.CountryRepository;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -36,8 +37,9 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public void delete(Long id) {
-        repository.deleteById(id);
+    @Transactional
+    public void delete(String country) {
+        repository.deleteByCountry(country);
     }
 
     @Override
